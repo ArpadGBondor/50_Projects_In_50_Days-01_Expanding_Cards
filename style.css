@@ -10,71 +10,105 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  height: 100vh;
   overflow: hidden;
   margin: 0;
 }
 
-.container {
+.expanding-cards {
   display: flex;
-  width: 90vw;
 }
 
-.panel {
+.expanding-cards-panel {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: grey;
-  height: 80vh;
-  border-radius: 50px;
+  border-radius: 2em;
   color: white;
   cursor: pointer;
   flex: 0.5;
-  margin: 10px;
+  margin: 0.5em;
   position: relative;
-  transition: flex 2s ease-in-out;
 }
 
-.panel h3 {
+.expanding-cards-panel .expanding-cards-label {
   font-size: 24px;
   position: absolute;
   bottom: 20px;
   left: 20px;
   opacity: 0;
-  transition: opacity 1s ease-out;
 }
 
-.panel.active {
+.expanding-cards-panel.active {
   flex: 5;
-  transition: flex 2s ease-in-out;
 }
 
-.panel.active h3 {
+.expanding-cards-panel.active .expanding-cards-label {
   opacity: 1;
-  transition: opacity 1s ease-in 1s;
 }
 
-@media (max-width: 480px) {
-  .container {
-    width: 100vw;
+/* Responsive design settings */
+/* Mobile first */
+/* XS ~ -80% font size */
+.expanding-cards {
+  width: 100%;
+  height: 100%;
+}
+
+.expanding-cards-panel {
+  transition: flex 1s ease-in-out 0.5s;
+}
+
+.expanding-cards-panel.active {
+  transition: flex 1s ease-in-out 0.5s;
+}
+
+.expanding-cards-panel .expanding-cards-label {
+  transition: opacity 0.5s ease-out;
+}
+.expanding-cards-panel.active .expanding-cards-label {
+  transition: opacity 0.5s ease-in 1.5s;
+}
+
+/* SM ~ 90%  font size */
+@media screen and (min-width: 576px) {
+  .expanding-cards {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+/* MD ~ 100%  font size */
+@media screen and (min-width: 768px) {
+  .expanding-cards-panel {
+    transition: flex 1.5s ease-in-out 0.5s;
   }
 
-  .panel {
-    transition: flex 1s ease-in-out 0.5s;
+  .expanding-cards-panel.active {
+    transition: flex 1.5s ease-in-out 0.5s;
   }
 
-  .panel.active {
-    transition: flex 1s ease-in-out 0.5s;
+  .expanding-cards-panel.active .expanding-cards-label {
+    transition: opacity 0.5s ease-in 2s;
+  }
+}
+
+/* LG - 110%  font size */
+@media screen and (min-width: 992px) {
+}
+
+/* XL - 120%  font size */
+@media screen and (min-width: 1200px) {
+  .expanding-cards-panel {
+    transition: flex 2s ease-in-out 0.5s;
   }
 
-  .panel h3 {
-    transition: opacity 0.5s ease-out;
-  }
-  .panel.active h3 {
-    transition: opacity 0.5s ease-in 1.5s;
+  .expanding-cards-panel.active {
+    transition: flex 2s ease-in-out 0.5s;
   }
 
-  .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
-    display: none;
+  .expanding-cards-panel.active .expanding-cards-label {
+    transition: opacity 0.5s ease-in 2.5s;
   }
 }
