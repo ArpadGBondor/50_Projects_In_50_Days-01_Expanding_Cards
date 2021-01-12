@@ -33,10 +33,10 @@ body {
 }
 
 .expanding-cards-panel .expanding-cards-label {
-  font-size: 24px;
+  font-size: 2em;
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 0em;
+  left: 1em;
   opacity: 0;
 }
 
