@@ -58,6 +58,21 @@ body {
     width: 100vw;
   }
 
+  .panel {
+    transition: flex 1s ease-in-out 0.5s;
+  }
+
+  .panel.active {
+    transition: flex 1s ease-in-out 0.5s;
+  }
+
+  .panel h3 {
+    transition: opacity 0.5s ease-out;
+  }
+  .panel.active h3 {
+    transition: opacity 0.5s ease-in 1.5s;
+  }
+
   .panel:nth-of-type(4),
   .panel:nth-of-type(5) {
     display: none;
